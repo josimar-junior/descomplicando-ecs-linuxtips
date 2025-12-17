@@ -1,0 +1,26 @@
+### General Configs ###
+
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
+variable "project_name" {
+  type = string
+}
+
+### SSM VPC ###
+
+variable "ssm_vpc_id" {}
+
+variable "ssm_public_subnet_1" {}
+
+variable "ssm_public_subnet_2" {}
+
+variable "ssm_public_subnet_3" {}
+
+variable "ssm_private_subnet_1" {}
+
+variable "ssm_private_subnet_2" {}
+
+variable "ssm_private_subnet_3" {}
