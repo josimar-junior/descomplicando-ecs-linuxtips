@@ -18,3 +18,7 @@ node_ami           = "ami-0b3ca45933d9d6d87"
 node_instance_type = "t3.nano"
 node_volume_size   = "30"
 node_volume_type   = "gp3"
+
+cluster_on_demand_min_size     = 1
+cluster_on_demand_max_size     = 3
+cluster_on_demand_desired_size = 2
