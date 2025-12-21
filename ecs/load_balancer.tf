@@ -34,9 +34,9 @@ resource "aws_lb" "main" {
   load_balancer_type = var.load_balancer_type
 
   subnets = [
-    data.aws_ssm_parameter.subnet_public_1a,
-    data.aws_ssm_parameter.subnet_public_1b,
-    data.aws_ssm_parameter.subnet_public_1c
+    data.aws_ssm_parameter.subnet_public_1a.value,
+    data.aws_ssm_parameter.subnet_public_1b.value,
+    data.aws_ssm_parameter.subnet_public_1c.value
   ]
 
   security_groups = [aws_security_group.lb.id]

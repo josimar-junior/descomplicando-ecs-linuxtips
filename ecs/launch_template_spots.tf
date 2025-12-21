@@ -1,5 +1,5 @@
-resource "aws_launch_template" "on_demand" {
-  name_prefix = format("%s-on-demand", var.project_name)
+resource "aws_launch_template" "spots" {
+  name_prefix = format("%s-spots", var.project_name)
 
   image_id = var.node_ami
 
@@ -9,6 +9,13 @@ resource "aws_launch_template" "on_demand" {
 
   iam_instance_profile {
     name = aws_iam_instance_profile.main.name
+  }
+
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      max_price = "0.15"
+    }
   }
 
   update_default_version = true
@@ -25,7 +32,7 @@ resource "aws_launch_template" "on_demand" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name = format("%s-on-demand", var.project_name)
+      Name = format("%s-spots", var.project_name)
     }
   }
 
