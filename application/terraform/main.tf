@@ -1,12 +1,12 @@
 module "service" {
   source = "/Users/josimarjunior/Documents/workspace-vscode/descomplicando-ecs-linuxtips/module"
 
-  cluster_name     = var.cluster_name
-  service_name     = var.service_name
-  service_port     = var.service_port
-  service_cpu      = var.service_cpu
-  service_memory   = var.service_memory
-  service_listener = data.aws_ssm_parameter.listener.value
+  cluster_name                = var.cluster_name
+  service_name                = var.service_name
+  service_port                = var.service_port
+  service_cpu                 = var.service_cpu
+  service_memory              = var.service_memory
+  service_listener            = data.aws_ssm_parameter.listener.value
   service_task_execution_role = aws_iam_role.main.arn
 
   vpc_id = data.aws_ssm_parameter.vpc_id.value
