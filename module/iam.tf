@@ -7,7 +7,7 @@ resource "aws_iam_role" "service_execution_role" {
       {
         Action = "sts:AssumeRole"
         Principal = {
-          Service = "ecs.amazonaws.com"
+          Service = "ecs-tasks.amazonaws.com"
         }
         Effect = "Allow"
         Sid    = ""
@@ -32,7 +32,13 @@ resource "aws_iam_role_policy" "service_execution_role" {
           "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
           "elasticloadbalancing:RegisterTargets",
           "ec2:Describe*",
-          "ec2:AuthorizeSecurityGroupIngress"
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ecr:GetAuthorizationToken",
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:BatchGetImage",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
         ],
         Resource = "*",
         Effect   = "Allow"
