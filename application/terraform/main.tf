@@ -20,4 +20,6 @@ module "service" {
 
   environment_variables = var.environment_variables
   capabilities          = var.capabilities
+
+  service_healthcheck = var.service_healthcheck
 }
