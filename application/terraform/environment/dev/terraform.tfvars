@@ -49,3 +49,11 @@ scale_out_statistic           = "Average"
 scale_out_period              = 60
 scale_out_evaluation_periods  = 2
 scale_out_cooldown            = 60
+
+scale_in_cpu_threshold       = 30
+scale_in_adjustment          = -1
+scale_in_comparison_operator = "LessThanOrEqualToThreshold"
+scale_in_statistic           = "Average"
+scale_in_period              = 60
+scale_in_evaluation_periods  = 2
+scale_in_cooldown            = 60
