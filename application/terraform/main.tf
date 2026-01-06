@@ -48,4 +48,6 @@ module "service" {
   scale_in_period              = var.scale_in_period
   scale_in_evaluation_periods  = var.scale_in_evaluation_periods
   scale_in_cooldown            = var.scale_in_cooldown
+
+  scale_traking_cpu = var.scale_traking_cpu
 }
