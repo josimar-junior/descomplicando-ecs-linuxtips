@@ -7,6 +7,8 @@ resource "aws_alb_target_group" "main" {
   protocol    = "HTTP"
   target_type = "ip"
 
+  deregistration_delay = 60
+
   health_check {
     healthy_threshold   = lookup(var.service_healthcheck, "healthy_threshold", "3")
     unhealthy_threshold = lookup(var.service_healthcheck, "unhealthy_threshold", "10")

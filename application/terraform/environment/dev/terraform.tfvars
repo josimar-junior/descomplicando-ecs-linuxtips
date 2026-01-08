@@ -9,6 +9,7 @@ ssm_listener         = "/linuxtips/ecs/lb/listener"
 ssm_private_subnet_1 = "/linuxtips-vpc/vpc/subnet_private_1a"
 ssm_private_subnet_2 = "/linuxtips-vpc/vpc/subnet_private_1b"
 ssm_private_subnet_3 = "/linuxtips-vpc/vpc/subnet_private_1c"
+ssm_alb_arn          = "/linuxtips/ecs/lb/arn"
 
 environment_variables = [
   {
@@ -58,4 +59,5 @@ scale_in_period              = 60
 scale_in_evaluation_periods  = 2
 scale_in_cooldown            = 60
 
-scale_traking_cpu = 50
+scale_traking_cpu       = 50
+scale_tracking_requests = 30

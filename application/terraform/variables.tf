@@ -13,6 +13,7 @@ variable "ssm_listener" {}
 variable "ssm_private_subnet_1" {}
 variable "ssm_private_subnet_2" {}
 variable "ssm_private_subnet_3" {}
+variable "ssm_alb_arn" {}
 
 variable "environment_variables" {
   type = list(any)
@@ -50,3 +51,6 @@ variable "scale_in_cooldown" {}
 
 ### CPU Tracking ###
 variable "scale_traking_cpu" {}
+
+### Request Tracking ###
+variable "scale_tracking_requests" {}

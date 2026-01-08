@@ -14,9 +14,9 @@ load_balancer_internal = false
 load_balancer_type     = "application"
 
 ### ECS General ###
-node_ami           = "ami-0b3ca45933d9d6d87"
-node_instance_type = "t3.micro"
-node_volume_size   = "30"
+node_ami           = "ami-0dc67873410203528"
+node_instance_type = "c6a.large"
+node_volume_size   = "50"
 node_volume_type   = "gp3"
 
 cluster_on_demand_min_size     = 1
