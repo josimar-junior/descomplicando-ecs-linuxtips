@@ -1,5 +1,5 @@
 resource "aws_alb_target_group" "main" {
-  name = format("%s-%s", var.cluster_name, var.service_name)
+  name = format("%s-tg", var.cluster_name)
 
   port   = var.service_port
   vpc_id = var.vpc_id

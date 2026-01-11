@@ -1,4 +1,4 @@
-cluster_name   = "linuxtips-ecs-cluster"
+cluster_name   = "linuxtips-ecs-cluster-fargate"
 service_name   = "chip"
 service_port   = 8080
 service_cpu    = 256
@@ -30,15 +30,24 @@ service_healthcheck = {
   port                = 8080
 }
 
-service_launch_type = "EC2"
-service_task_count  = 3
+service_launch_type = [
+  {
+    capacity_provider = "FARGATE"
+    weight            = 50
+  },
+  {
+    capacity_provider = "FARGATE_SPOT"
+    weight            = 50
+  }
+]
+service_task_count = 3
 
 service_hosts = [
   "chip.linuxtips.demo"
 ]
 
 ### Autoscaling ###
-scale_type   = "cpu"
+scale_type   = "cpu_tracking"
 task_minimum = 3
 task_maximum = 12
 
@@ -59,5 +68,5 @@ scale_in_period              = 60
 scale_in_evaluation_periods  = 2
 scale_in_cooldown            = 60
 
-scale_traking_cpu       = 50
+scale_tracking_cpu      = 50
 scale_tracking_requests = 30

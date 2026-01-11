@@ -24,7 +24,12 @@ variable "capabilities" {
 variable "service_healthcheck" {
   type = map(any)
 }
-variable "service_launch_type" {}
+variable "service_launch_type" {
+  type = list(object({
+    capacity_provider = string
+    weight            = number
+  }))
+}
 variable "service_task_count" {}
 variable "service_hosts" {}
 
@@ -50,7 +55,7 @@ variable "scale_in_evaluation_periods" {}
 variable "scale_in_cooldown" {}
 
 ### CPU Tracking ###
-variable "scale_traking_cpu" {}
+variable "scale_tracking_cpu" {}
 
 ### Request Tracking ###
 variable "scale_tracking_requests" {}

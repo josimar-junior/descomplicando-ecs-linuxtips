@@ -12,5 +12,5 @@ const params = {
 }
 
 export default function () {
-    http.get('http://linuxtips-ecs-cluster-lb-ingress-1805861361.us-east-1.elb.amazonaws.com/burn/cpu', params)
+    http.get('http://linuxtips-ecs-cluster-fargate-lb-50596455.us-east-1.elb.amazonaws.com/burn/cpu', params)
 }
